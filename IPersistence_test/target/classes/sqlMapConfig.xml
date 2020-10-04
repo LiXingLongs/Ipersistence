@@ -1,0 +1,14 @@
+<configuration>
+
+    <!-- 定义使用端数据库配置 -->
+    <dataSource>
+        <property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+        <property name="jdbc" value="jdbc:mysql:///test"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="123456"></property>
+    </dataSource>
+
+    <mapper resource="UserMapper.xml"></mapper>
+
+
+</configuration>

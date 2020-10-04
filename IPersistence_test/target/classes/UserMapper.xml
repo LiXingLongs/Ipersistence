@@ -1,0 +1,39 @@
+<mapper namespace="com.lagou.dao.IUserDao">
+
+    <!--
+        定义查询语句
+
+        namespace+id组成mapper的唯一标识 statementId
+
+        通过反射技术映射参数和组装返回值
+    -->
+    <select id="findAll" resultType="com.lagou.pojo.User" paramType="com.lagou.pojo.User">
+       select * from user
+    </select>
+    <!--
+        User user = new User()
+        user.setId(1)
+        user.setUserName("tom")
+
+        #{id}为了知道参数使用的是实体类的哪个属性
+    -->
+    <select id="findByCondition" resultType="com.lagou.pojo.User" paramType="com.lagou.pojo.User">
+        select * from user where id = #{id} and username = #{username}
+    </select>
+
+    <insert id="insert" paramType="com.lagou.pojo.User">
+        insert into user values (#{id}, #{username})
+    </insert>
+
+    <update id="update" paramType="com.lagou.pojo.User">
+        update user
+        set username = #{username}
+        where id = #{id}
+    </update>
+
+    <delete id="delete" paramType="com.lagou.pojo.User">
+        delete from user
+        where id = #{id}
+    </delete>
+
+</mapper>
